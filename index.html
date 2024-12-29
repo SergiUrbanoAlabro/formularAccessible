@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible HTML Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <form id="userForm" aria-labelledby="formTitle">
+    <h1 id="formTitle">User Registration Form</h1>
+    <p class="instructions">All fields marked with * are required.</p>
+
+    <label for="firstName">First Name: *</label>
+    <input type="text" id="firstName" name="firstName" required aria-required="true" />
+
+    <label for="lastName">Last Name: *</label>
+    <input type="text" id="lastName" name="lastName" required aria-required="true" />
+
+    <label for="email">Email: *</label>
+    <input type="email" id="email" name="email" required aria-required="true" aria-describedby="emailHelp" />
+    <span id="emailHelp" class="instructions">We'll never share your email with anyone else.</span>
+
+    <label for="password">Password: *</label>
+    <input type="password" id="password" name="password" required aria-required="true"
+      aria-describedby="passwordHelp" />
+    <span id="passwordHelp" class="instructions">Use at least 8 characters.</span>
+
+    <label for="confirmPassword">Confirm Password: *</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required aria-required="true" />
+
+    <label for="phoneNumber">Phone Number: *</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required aria-required="true" aria-describedby="phoneHelp" />
+    <span id="phoneHelp" class="instructions">Format: +1234567890</span>
+
+    <label for="birthdate">Birthdate: *</label>
+    <input type="date" id="birthdate" name="birthdate" required aria-required="true" />
+
+    <label for="gender">Gender: *</label>
+    <select id="gender" name="gender" required aria-required="true">
+      <option value="" disabled selected>Select your gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <button type="submit" aria-label="Submit the form">Submit</button>
+  </form>
+</body>
+
+</html>
